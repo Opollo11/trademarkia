@@ -6,10 +6,6 @@ export const Navbar = () => {
       as="nav"
       aria-label="main navigation"
       w={'100vw'}
-      position="fixed"
-      top={0}
-      left={0}
-      zIndex={1}
       px={16}
       py={8}
     >
