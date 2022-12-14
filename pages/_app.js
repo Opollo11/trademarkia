@@ -1,6 +1,7 @@
 import { ChakraProvider } from '@chakra-ui/react';
 import { extendTheme } from '@chakra-ui/react';
 import { Box } from '@chakra-ui/react';
+import { Navbar } from '../sections/Navbar';
 
 const colors = {
   brand: {
@@ -19,6 +20,7 @@ function MyApp({ Component, pageProps }) {
         bgRepeat={'no-repeat'}
         bgPosition={'center'}
       >
+        <Navbar />
         <Component {...pageProps} />
       </Box>
     </ChakraProvider>
