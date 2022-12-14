@@ -1,5 +1,5 @@
 import Head from 'next/head';
-import { Box, Flex, Text } from '@chakra-ui/react';
+import { Box, Button, Flex, Text } from '@chakra-ui/react';
 import { Card, CardHeader, CardBody, CardFooter } from '@chakra-ui/react';
 import { Grid, GridItem } from '@chakra-ui/react';
 
@@ -75,22 +75,47 @@ export default function Home() {
                 height={'50%'}
                 mb={2}
               ></Box>
-              <Text
-                fontWeight={'semibold'}
-                color={'white'}
-                fontSize={'xs'}
+              <Box mb={4}>
+                <Text
+                  fontWeight={'semibold'}
+                  color={'white'}
+                  fontSize={'xs'}
+                >
+                  {item.name}
+                </Text>
+                <Text
+                  color={'#929292'}
+                  fontSize={'xs'}
+                >
+                  {item.type}
+                </Text>
+              </Box>
+              <Button
+                variant={'outline'}
+                color="white"
+                _hover={{
+                  bgColor: '#CB5FFE',
+                }}
+                size={'xs'}
+                w={'full'}
               >
-                {item.name}
-              </Text>
-              <Text
-                color={'#929292'}
-                fontSize={'xs'}
-              >
-                {item.type}
-              </Text>
+                Select
+              </Button>
             </GridItem>
           ))}
         </Grid>
+        <Button
+          mt={12}
+          variant={'solid'}
+          size={'sm'}
+          w={'156px'}
+          _hover={{
+            bgColor: '#CB5FFE',
+            color: 'white',
+          }}
+        >
+          Apply
+        </Button>
       </Flex>
     </div>
   );
