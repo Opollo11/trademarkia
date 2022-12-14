@@ -1,6 +1,32 @@
 import Head from 'next/head';
+import { Box, Flex, Text } from '@chakra-ui/react';
+import { Card, CardHeader, CardBody, CardFooter } from '@chakra-ui/react';
+import { Grid, GridItem } from '@chakra-ui/react';
 
 export default function Home() {
+  const data = [
+    {
+      name: 'Android Development',
+      type: 'Full Time',
+    },
+    {
+      name: '.NET Development',
+      type: 'Full Time',
+    },
+    {
+      name: 'Frontend (React)',
+      type: 'Full Time',
+    },
+    {
+      name: 'Backend (Go)',
+      type: 'Full Time',
+    },
+    {
+      name: 'iOS Development',
+      type: 'Full Time',
+    },
+  ];
+
   return (
     <div>
       <Head>
@@ -14,8 +40,58 @@ export default function Home() {
           href="/favicon.ico"
         />
       </Head>
-
-      <main></main>
+      <Flex
+        as={'main'}
+        px={16}
+        alignItems={'center'}
+        height={'100vh'}
+        justifyContent={'center'}
+        flexDir={'column'}
+      >
+        <Text
+          color={'white'}
+          fontSize={'2xl'}
+          mb={8}
+        >
+          Select Your Domain
+        </Text>
+        <Grid
+          templateColumns="repeat(5, 1fr)"
+          gap={12}
+        >
+          {data.map((item) => (
+            <GridItem
+              key={item.name}
+              w={'156px'}
+              bgColor={'#252525'}
+              rounded={'md'}
+              height={'48'}
+              p={2}
+            >
+              <Box
+                rounded={'md'}
+                bgColor={'white'}
+                w={'100%'}
+                height={'50%'}
+                mb={2}
+              ></Box>
+              <Text
+                fontWeight={'semibold'}
+                color={'white'}
+                fontSize={'xs'}
+              >
+                {item.name}
+              </Text>
+              <Text
+                color={'#929292'}
+                fontSize={'xs'}
+              >
+                {item.type}
+              </Text>
+            </GridItem>
+          ))}
+        </Grid>
+      </Flex>
     </div>
   );
 }
